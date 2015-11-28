@@ -11,16 +11,16 @@ import support.helpers;
 public class BagPage {
 	private WebDriver driver;
 	
-	@FindBy(className = "glimmer-container")
-	private WebElement variantSwitch;
+	@FindBy(css = ".heading-product > a")
+	private WebElement productName;
 
 	public BagPage(final WebDriver driver){
 		 this.driver = driver;
 	}
 
-	public void selectVariant(){
-		helpers.waitForElement(driver, variantSwitch, constants.animationTime);
-		variantSwitch.click();
+	public String getFirstItemText(){
+		helpers.waitForElement(driver, productName, constants.animationTime);
+		return productName.getText();
 	}
 
 }

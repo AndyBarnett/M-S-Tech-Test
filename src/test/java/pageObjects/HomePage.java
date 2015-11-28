@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -25,7 +24,6 @@ public class HomePage {
 
 	public ProductCategoryPage clickMenCategory(){
 		helpers.waitForElement(driver, menCategory, constants.pageLoadTime);
-		Assert.assertTrue(menCategory.isDisplayed());
 		
 		Actions action = new Actions(driver);
 		action.moveToElement(menCategory).build().perform();

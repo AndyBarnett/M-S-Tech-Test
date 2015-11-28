@@ -13,7 +13,7 @@ public class Hooks {
 	@Before
 	public void initPageObjects() {
 		System.setProperty("webdriver.chrome.driver",
-				"E:/GitHub/MandS_TT/chromedriver.exe");
+				"./chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 

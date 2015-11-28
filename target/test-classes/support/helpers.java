@@ -11,4 +11,9 @@ public class helpers {
 		WebDriverWait pageLoadWait = new WebDriverWait(driver, timeout);
 		pageLoadWait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
+	
+	public static final void waitForElementText(WebDriver driver, WebElement ele, String expectedText, int timeout){
+		WebDriverWait pageLoadWait = new WebDriverWait(driver, timeout);
+		pageLoadWait.until(ExpectedConditions.textToBePresentInElement(ele, expectedText));
+	}
 }

@@ -15,10 +15,13 @@ public class ProductPage {
 	private WebElement variantSwitch;
 	
 	@FindBy(css = "label[for='SDUMMY']")
-	private WebElement sizeRadio;
+	private WebElement smallSizeRadio;
 	
-	@FindBy(className = "basket")
+	@FindBy(css = "input[value='add to bag']")
 	private WebElement addToBagButton;
+	
+	@FindBy(id = "viewBagCountHeader")
+	private WebElement bagTotal;
 	
 	@FindBy(className = "header-link")
 	private WebElement bagButton;
@@ -28,16 +31,16 @@ public class ProductPage {
 	}
 
 	public void selectVariant(){
-		helpers.waitForElement(driver, variantSwitch, constants.animationTime);
 		variantSwitch.click();
 	}
 	
 	public void selectSize(){
-		sizeRadio.click();
+		smallSizeRadio.click();
 	}
 	
 	public void addToBag(){
 		addToBagButton.click();
+		helpers.waitForElementText(driver, bagTotal, "1", constants.addToBagTime);
 	}
 	
 	public BagPage goToBag() {
