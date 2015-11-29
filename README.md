@@ -8,3 +8,5 @@ The project should be able to be run out-of-the-box. Import it into any IDE whic
 
 ## Running the tests
 The test runner I used was JUnit. Execute the tests from within your IDE by running stepDefinitions/RunTests.java as a JUnit Test.
+
+I have included the Chrome driver in the repo. The tests currently point to that due to the property set in Hooks.java. It should work, but feel free to remove/change this and use FireFoxDriver instead, depending on how your system is set up.
